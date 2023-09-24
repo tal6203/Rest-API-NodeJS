@@ -1,16 +1,29 @@
 const knex = require('knex');
 const config = require('config');
 
-const connectedKnex = knex({
+
+const sslConfig = {
+    rejectUnauthorized: false, 
+  };
+  
+  const connectedKnex = knex({
     client: 'pg',
-    version: config.db.version,
     connection: {
-        host: config.db.host,
-        user: config.db.user,
-        password: config.db.password,
-        database: config.db.database
-    }
-});
+      connectionString: config.connectionString,
+      ssl: sslConfig, 
+    },
+  });
+
+// const connectedKnex = knex({
+//     client: 'pg',
+//     version: config.db.version,
+//     connection: {
+//         host: config.db.host,
+//         user: config.db.user,
+//         password: config.db.password,
+//         database: config.db.database
+//     }
+// });
 
 
 const get_all_test = () => {
