@@ -54,7 +54,7 @@ app.get('/my_ejs', async (req, res) => res.render('my_ejs', {
 // ============================================
 
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log(`Listening to port ${port}`);
 });
 
