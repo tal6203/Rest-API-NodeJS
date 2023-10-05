@@ -17,8 +17,8 @@ const daltest = require('./dal/test_repo');
 
 const port = config.express.port;
 
-// const logger = require('./logger/my_logger');
-// logger.debug('test1');
+const logger = require('./logger/my_logger');
+logger.debug('test1');
 
 
 const app = express();
@@ -37,10 +37,10 @@ app.use(express.static(path.join('.', '/script/')));
 
 app.set('view engine', 'ejs');
 
-// app.get('*', async (req, res, next) => {
-//     logger.debug(`URL LOG ------------- ${req.url}`)
-//     next()
-// })
+app.get('*', async (req, res, next) => {
+    logger.debug(`URL LOG ------------- ${req.url}`)
+    next()
+})
 
 app.get('/my_ejs', async (req, res) => res.render('my_ejs', {
     tests: await daltest.get_all_test()
