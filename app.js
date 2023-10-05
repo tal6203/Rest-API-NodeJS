@@ -31,10 +31,10 @@ app.use(express.urlencoded({
 
 
 
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join('.', 'static')));
 
 
-app.use(express.static(path.join(__dirname, 'script')));
+app.use(express.static(path.join('.', 'script')));
 
 app.set('view engine', 'ejs');
 
