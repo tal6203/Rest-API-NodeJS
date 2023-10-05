@@ -2,15 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.js", // Specify the entry point for your Node.js app
+      "src": "app.js", 
       "use": "@now/node" 
     }
   ],
   "routes": [
-    { "handle": "filesystem" }, // Serve static files
+    { "handle": "filesystem" }, 
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1" // Forward API requests to your Express app
+      "dest": "/api/$1" 
     }
   ]
 }
