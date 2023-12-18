@@ -85,5 +85,8 @@ app.use(
 
 app.use('/test', testsRouter);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
+
 module.exports = app;
 
