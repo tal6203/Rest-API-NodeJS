@@ -1,7 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "app.js", "use": "vercel-node@22" }
+    { "src": "app.js", "use": "@vercel/node" },
+    { "src": "routes/tests.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/test/.*", "dest": "routes/tests.js" },
@@ -20,3 +21,4 @@
     "EXPRESS_PORT": "8080"
   }
 }
+
