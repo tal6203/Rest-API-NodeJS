@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('knex');
 const config = require('config');
-const logger = require('../logger/my_logger');
+// const logger = require('../logger/my_logger');
 const dal_test = require('../dal/test_repo');
 
 
@@ -78,12 +78,12 @@ const connectedKnex = knex({
 router.get('/', async (req, resp) => {
     try {
         const test = await dal_test.get_all_test();
-        logger.debug(`[test router][router.get]`);
+        // logger.debug(`[test router][router.get]`);
         resp.status(200).json({ test });
         
     }
     catch (err) {
-        logger.debug(`error during GET in test router. ${err.message}`);
+        // logger.debug(`error during GET in test router. ${err.message}`);
         resp.status(500).json({ "error": err.message });
     }
 });
@@ -116,11 +116,11 @@ router.get('/', async (req, resp) => {
 router.get('/:id', async (req, resp) => {
     try {
         const test = await dal_test.get_test_by_id(req.params.id);
-        logger.debug(`[test router][router.get] parameter :id = ${req.params.id}`)
+        // logger.debug(`[test router][router.get] parameter :id = ${req.params.id}`)
         resp.status(200).json(test);
     }
     catch (err) {
-        logger.debug(`ERROR : ${err.message}`)
+        // logger.debug(`ERROR : ${err.message}`)
         resp.status(500).json({ "error": err.message });
     }
 });
@@ -131,7 +131,7 @@ function is_valid_test(obj) {
         obj.hasOwnProperty('date') && obj.hasOwnProperty('courseid');
 
     if (!result) {
-        logger.debug(`bad object was recieved. ${JSON.stringify(obj)}`);
+        // logger.debug(`bad object was recieved. ${JSON.stringify(obj)}`);
     }
     return result;
 }
@@ -140,7 +140,7 @@ function is_valid_test_for_update(obj) {
     const result = obj.hasOwnProperty('updateat') && obj.hasOwnProperty('name') && obj.hasOwnProperty('courseid');
 
     if (!result) {
-        logger.debug(`bad object was recieved. ${JSON.stringify(obj)}`);
+        // logger.debug(`bad object was recieved. ${JSON.stringify(obj)}`);
     }
     return result;
 }
@@ -184,7 +184,7 @@ router.post('/', async (req, resp) => {
         });
     }
     catch (err) {
-        logger.debug(`error during POST in test router. test = ${JSON.stringify(test)} ${err.message}`);
+        // logger.debug(`error during POST in test router. test = ${JSON.stringify(test)} ${err.message}`);
         resp.status(500).json({ "error": err.message });
     }
 });
@@ -229,7 +229,7 @@ router.put('/:id', async (req, resp) => {
         })
     }
     catch (err) {
-        logger.debug(`error during PUT in test router. test = ${JSON.stringify(test)} ${err.message}`);
+        // logger.debug(`error during PUT in test router. test = ${JSON.stringify(test)} ${err.message}`);
         resp.status(500).json({ "error": err.message });
     }
 });
@@ -268,7 +268,7 @@ router.delete('/:id', async (req, resp) => {
         });
     }
     catch (err) {
-        logger.debug(`error during DELETE in test router.  ${err.message}`);
+        // logger.debug(`error during DELETE in test router.  ${err.message}`);
         resp.status(500).json({ "error": err.message });
     }
 
