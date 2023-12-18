@@ -1,11 +1,12 @@
 {
-  "functions": {
-    "api/app.js": {},
-    "api/tests.js": {}
-  },
-  "rewrites": [
-    { "source": "^/test/(.*)$", "destination": "/api/tests.js" },
-    { "source": "/(.*)", "destination": "/api/app.js" }
+  "version": 2,
+  "builds": [
+    { "src": "api/app.js", "use": "vercel-node@22" },
+    { "src": "api/tests.js", "use": "vercel-node@22" }
+  ],
+  "routes": [
+    { "src": "/test/.*", "dest": "api/tests.js" },
+    { "src": "/(.*)", "dest": "api/app.js" }
   ],
   "env": {
     "DB_HOST": "127.0.0.1",
