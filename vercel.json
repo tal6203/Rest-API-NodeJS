@@ -8,14 +8,8 @@
     }
   },
   "rewrites": [
-    {
-      "source": "/test/.*",
-      "destination": "/api/tests.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/app.js"
-    }
+    { "source": "^/test/(.*)$", "destination": "/api/tests.js" },
+    { "source": "/(.*)", "destination": "/api/app.js" }
   ],
   "env": {
     "DB_HOST": "127.0.0.1",
