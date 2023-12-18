@@ -9,14 +9,12 @@
   },
   "rewrites": [
     {
+      "source": "/test/.*",
+      "destination": "/api/tests.js"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/app.js"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/test/.*",
-      "dest": "/api/tests.js"
     }
   ],
   "env": {
