@@ -3,7 +3,8 @@ const { combine, timestamp, label, prettyPrint } = format;
 const fs = require('fs');
 
 const date = new Date();
-const logDir = `logs/${date.toLocaleString()}`;
+const sanitizedTimestamp = date.toLocaleString().replace(/[^\w]/g, '_'); // Replace non-word characters with underscores
+const logDir = `logs/${sanitizedTimestamp}`;
 
 // Ensure log directory exists
 if (!fs.existsSync(logDir)) {
