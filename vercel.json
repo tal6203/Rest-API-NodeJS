@@ -1,24 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "app.js", "use": "@vercel/node" },
-    { "src": "routes/tests.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/test/.*", "dest": "routes/tests.js" },
-    { "src": "/static/(.*)", "dest": "static/$1" },
-    { "src": "/script/(.*)", "dest": "script/$1" },
-    { "src": "/views/(.*)", "dest": "views/$1" },
-    { "src": "/(.*)", "dest": "app.js" }
-  ],
-  "env": {
-    "DB_HOST": "127.0.0.1",
-    "DB_USER": "postgres",
-    "DB_PASSWORD": "admin",
-    "DB_DATABASE": "postgres",
-    "DB_VERSION": "15",
-    "CONNECTION_STRING": "postgres://default:cwd9a1IrDMPx@ep-steep-dream-56573355.us-east-1.postgres.vercel-storage.com:5432/verceldb",
-    "EXPRESS_PORT": "8080"
-  }
+  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
 }
-
