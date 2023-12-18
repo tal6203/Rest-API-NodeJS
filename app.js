@@ -39,7 +39,7 @@ app.use(express.static(path.join('.', 'script')));
 app.set('view engine', 'ejs');
 
 app.get('*', async (req, res, next) => {
-    logger.debug(`URL LOG ------------- ${req.url}`)
+    // logger.debug(`URL LOG ------------- ${req.url}`)
     next()
 })
 
