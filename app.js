@@ -4,7 +4,7 @@ const path = require('path');
 const url = require('url');
 const cors = require('cors');
 const { response } = require('express');
-const config = require('config');
+const config = require('../config/default.json');
 
 const testsRouter = require('./routes/tests')
 
