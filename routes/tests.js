@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('knex');
-const config = require('config');
+const config = require('../config/default.json');
 // const logger = require('../logger/my_logger');
 const dal_test = require('../dal/test_repo');
 
