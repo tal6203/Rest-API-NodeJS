@@ -17,8 +17,8 @@ const daltest = require('./dal/test_repo');
 
 const port = config.express.port;
 
-// const logger = require('./logger/my_logger');
-// logger.debug('test1');
+const logger = require('./logger/my_logger');
+logger.debug('test1');
 
 
 const app = express();
