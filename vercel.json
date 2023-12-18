@@ -1,11 +1,7 @@
 {
   "functions": {
-    "api/app.js": {
-      "runtime": "vercel-node@22"
-    },
-    "api/tests.js": {
-      "runtime": "vercel-node@22"
-    }
+    "api/app.js": {},
+    "api/tests.js": {}
   },
   "rewrites": [
     { "source": "^/test/(.*)$", "destination": "/api/tests.js" },
