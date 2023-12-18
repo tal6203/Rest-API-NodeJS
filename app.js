@@ -87,3 +87,5 @@ app.use(
 
 app.use('/test', testsRouter);
 
+module.exports = app;
+
