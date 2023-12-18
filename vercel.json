@@ -6,7 +6,7 @@
     { "src": "/script/(.*)", "dest": "/script/$1" },
     { "src": "/my_ejs", "dest": "/app.js" },
     { "src": "/api-docs", "dest": "/app.js" },
-    { "src": "/test/(.*)", "dest": "/test.js" },
+    { "src": "/test/(.*)", "dest": "/routes/tests.js" },
     { "src": "/(.*)", "dest": "/app.js" }
   ]
 }
