@@ -1,0 +1,33 @@
+{
+  "functions": {
+    "api/app.js": {
+      "runtime": "vercel-node@2",
+      "maxDuration": 30
+    },
+    "api/tests.js": {
+      "runtime": "vercel-node@2",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/app.js"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/test/.*",
+      "dest": "/api/tests.js"
+    }
+  ],
+  "env": {
+    "DB_HOST": "127.0.0.1",
+    "DB_USER": "postgres",
+    "DB_PASSWORD": "admin",
+    "DB_DATABASE": "postgres",
+    "DB_VERSION": "15",
+    "CONNECTION_STRING": "your_connection_string_here",
+    "EXPRESS_PORT": "8080"
+  }
+}
