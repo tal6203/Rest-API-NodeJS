@@ -1,12 +1,14 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/app.js", "use": "vercel-node@22" },
-    { "src": "api/tests.js", "use": "vercel-node@22" }
+    { "src": "app.js", "use": "vercel-node@22" }
   ],
   "routes": [
-    { "src": "/test/.*", "dest": "api/tests.js" },
-    { "src": "/(.*)", "dest": "api/app.js" }
+    { "src": "/test/.*", "dest": "routes/tests.js" },
+    { "src": "/static/(.*)", "dest": "static/$1" },
+    { "src": "/script/(.*)", "dest": "script/$1" },
+    { "src": "/views/(.*)", "dest": "views/$1" },
+    { "src": "/(.*)", "dest": "app.js" }
   ],
   "env": {
     "DB_HOST": "127.0.0.1",
