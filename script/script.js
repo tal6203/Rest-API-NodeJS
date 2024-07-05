@@ -1,10 +1,7 @@
-
-
 function run_me() {
   fetch("/test")
     .then((response) => response.json())
     .then((json) => {
-      console.log(json.test);
       var tb = "";
       json.test.forEach((e) => {
         tb += `<tr><td>${e.id}</td>
